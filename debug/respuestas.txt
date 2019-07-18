@@ -25,21 +25,20 @@ El programa corre pero da un resultado incorrecto. Solucion: detener el contador
 
 	add_array_dynamic.c
 
-El programa corre, da el verdadero resultado, pero:
+El programa corre, da el verdadero resultado, pero no deberia!
 
- __GI___libc_malloc (bytes=12) at malloc.c:2902
-2902	malloc.c: No existe el archivo o el directorio.
-malloc_hook_ini (sz=12, caller=0x4005fc <main+32>) at hooks.c:29
-29	hooks.c: No existe el archivo o el directorio.
-ptmalloc_init () at arena.c:260
-260	arena.c: No existe el archivo o el directorio.
-
-.... etc
-
-Solucion???
+Solucion es la misma que la anterior
 
 	add_array_segfault.e
 
+Violación de segmento (`core' generado) - thats an error-error
 
+Aca corregir la iteracion no soluciona el problema porque sigue dando el mismo error
 
+Si intento sumar punteros como si fueran enteros, en gdb me encuentro con esto:
+
+Old value = {0x1, 0x40070d <__libc_csu_init+77>, 0x0}
+New value = {0x0, 0x40070d <__libc_csu_init+77>, 0x0}
+
+Entonces la solucion esta en NO hacer a a y b punteros en la funcion
 
