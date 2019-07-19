@@ -90,11 +90,27 @@ antes y después de ejecutar `ulimit -s unlimited`, googleen, etcétera.
 - ¿Cómo harían una solución más robusta que la anterior, que no
 requiera tocar los `ulimits`?
 
+-----------------------
+
+## Valgrind
+
+En la carpeta `valgrind/` hay ejemplos en C y FORTRAN que se pueden
+ejecutar con valgrind. Describan el error y por qué sucede
+
+valgrind --leak-check=full --track-origins=yes ./programa
 
 
+## Funny
+
+En la carpeta `funny/` hay un código de C. Describan las diferencias
+de los ejecutables al compilar con y sin el flag `-DDEBUG`. ¿De dónde
+vienen esas diferencias?
+
+Violación de segmento (`core' generado)
 
 
-
+I'm HERE !!!! 
+Violación de segmento (`core' generado)
 
 
 
